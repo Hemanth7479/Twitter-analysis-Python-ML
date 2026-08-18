@@ -1,112 +1,143 @@
-# 🎬 Movie Recommendation System
+# 🐦 Twitter Sentiment Analysis Using Python & Machine Learning
 
-A machine learning-based Movie Recommendation System that recommends similar movies based on a user's movie selection.
+A Natural Language Processing and Machine Learning project that analyzes Twitter data and classifies tweets based on their sentiment.
 
-The project combines a recommendation model with a Django web application, allowing users to search for a movie and receive relevant movie recommendations through an interactive web interface.
+This project focuses on analyzing public sentiment toward **Pfizer vaccines** and categorizing tweets as **Positive, Negative, or Neutral**.
 
 ---
 
 ## 📌 Project Overview
 
-Recommendation systems are widely used by platforms such as Netflix, Amazon Prime Video, and other streaming services to help users discover relevant content.
+Social media platforms such as Twitter contain large amounts of public opinion and discussion.
 
-This project demonstrates how a movie recommendation model can be integrated into a complete web application.
+Sentiment analysis can be used to understand how people feel about a particular topic by analyzing text and identifying the emotional tone behind it.
 
-The user searches for a movie, the recommendation engine processes the selected movie, and the application returns similar movie recommendations.
+In this project, Twitter data related to Pfizer vaccines is analyzed using Python and Machine Learning.
 
----
-
-## 🚀 Features
-
-- Movie search functionality
-- Auto-suggestion while searching
-- Similar movie recommendations
-- Machine learning-based recommendation engine
-- Django backend
-- Interactive web interface
-- HTML, CSS, and JavaScript frontend
-- Model training notebook
-- Local deployment support
-- Recommendation model integration
-
----
-
-## 🏗️ System Architecture
+The basic workflow is:
 
 ```text
-User
-  │
-  ▼
-Movie Search
-  │
-  ▼
-Django Web Application
-  │
-  ▼
-Recommendation Engine
-  │
-  ▼
-Movie Dataset
-  │
-  ▼
-Similarity / Recommendation Model
-  │
-  ▼
-Recommended Movies
-  │
-  ▼
-Web Interface
+Twitter Dataset
+      ↓
+Data Cleaning
+      ↓
+Text Preprocessing
+      ↓
+Exploratory Data Analysis
+      ↓
+Feature Extraction
+      ↓
+Machine Learning Models
+      ↓
+Sentiment Classification
+      ↓
+Positive / Negative / Neutral
 ```
 
 ---
 
-## 🧠 How It Works
+## 🎯 Project Objective
 
-The user enters a movie name into the search interface.
+The main objectives of this project are:
 
-```text
-User searches for a movie
-        ↓
-Application identifies the movie
-        ↓
-Recommendation model processes the selection
-        ↓
-Similar movies are identified
-        ↓
-Recommendations are returned
-        ↓
-Results are displayed to the user
-```
-
-The system currently contains approximately the top 2,500 movies based on IMDb data.
+- Analyze Twitter data using Python
+- Clean and preprocess tweet text
+- Understand public sentiment toward Pfizer vaccines
+- Classify tweets into sentiment categories
+- Compare different machine learning classifiers
+- Identify the model that provides the best classification performance
 
 ---
 
-## 🛠️ Technology Stack
+## 💬 Sentiment Categories
 
-### Backend
+The system classifies tweets into three major categories:
+
+### 😊 Positive
+
+Tweets expressing favorable or positive opinions.
+
+### 😐 Neutral
+
+Tweets that do not strongly express positive or negative sentiment.
+
+### 😞 Negative
+
+Tweets expressing unfavorable or negative opinions.
+
+---
+
+## 🧠 Machine Learning Workflow
+
+The project follows a standard NLP and Machine Learning pipeline.
+
+### 1. Data Collection
+
+The project uses Twitter data related to Pfizer vaccines.
+
+### 2. Data Cleaning
+
+Tweet text is cleaned to remove unnecessary information and prepare it for analysis.
+
+### 3. Text Preprocessing
+
+Text is transformed into a format that can be processed by machine learning algorithms.
+
+### 4. Exploratory Analysis
+
+The dataset is explored to better understand sentiment patterns and tweet characteristics.
+
+### 5. Feature Engineering
+
+Text information is converted into numerical features that machine learning models can process.
+
+### 6. Model Training
+
+Different classifiers are evaluated to determine which model performs best.
+
+### 7. Sentiment Prediction
+
+The trained model classifies tweets as:
+
+```text
+Positive
+Negative
+Neutral
+```
+
+---
+
+## 🛠️ Technologies Used
+
+### Programming
 
 - Python
-- Django
 
-### Machine Learning / Data
+### Machine Learning
+
+- Scikit-learn
+- Classification algorithms
+- Model evaluation
+
+### Data Analysis
 
 - Pandas
-- PyArrow
-- Recommendation model
-- Parquet-based model/data storage
+- NumPy
 
-### Frontend
+### Natural Language Processing
 
-- HTML
-- CSS
-- JavaScript
-- Bootstrap
-- jQuery
+- Text preprocessing
+- Sentiment analysis
+- Feature extraction
+
+### Visualization
+
+- Matplotlib
 
 ### Development
 
 - Jupyter Notebook
+- Python scripts
 - Git
 - GitHub
 
@@ -115,81 +146,99 @@ The system currently contains approximately the top 2,500 movies based on IMDb d
 ## 📂 Project Structure
 
 ```text
-Movie Recommendation-System/
+Twitter-analysis-Python-ML/
 │
-├── movie_recommendation/
-│   └── Django project configuration
-│
-├── recommender/
-│   └── Recommendation application
-│
-├── static/
-│   └── Application assets and model data
-│
-├── readme_images/
-│   └── README screenshots
-│
-├── Movie_Recommendation_System_Complete_Guide.ipynb
-│
-├── manage.py
-├── requirements.txt
-├── build.sh
-├── db.sqlite3
-└── README.md
+└── Twitter-analysis Python:ML/
+    │
+    ├── Twitter sentiment analysis_live.ipynb
+    │
+    ├── Twitter sentiment analysis_live.py
+    │
+    └── README.md
 ```
 
----
-
-## 🔍 User Workflow
-
-The application provides a simple recommendation workflow.
-
-### Step 1
-
-Open the Movie Recommendation System.
-
-### Step 2
-
-Search for a movie using the search bar.
-
-For example:
+### Notebook
 
 ```text
-The Dark Knight
+Twitter sentiment analysis_live.ipynb
 ```
 
-### Step 3
+Contains the interactive data analysis and machine learning workflow.
 
-Select the desired movie from the search suggestions.
+### Python Script
 
-### Step 4
+```text
+Twitter sentiment analysis_live.py
+```
 
-The recommendation engine analyzes the selected movie.
-
-### Step 5
-
-The application displays similar movie recommendations.
+Contains the Python implementation of the sentiment analysis workflow.
 
 ---
 
-## 💻 Running the Project Locally
+## 🔍 How Sentiment Analysis Works
+
+Example tweet:
+
+```text
+"The vaccine rollout has been very successful."
+```
+
+The system processes the text:
+
+```text
+Raw Tweet
+    ↓
+Text Cleaning
+    ↓
+Feature Extraction
+    ↓
+Machine Learning Classifier
+    ↓
+POSITIVE
+```
+
+Another example:
+
+```text
+"I am disappointed with the vaccine rollout."
+```
+
+could be classified as:
+
+```text
+NEGATIVE
+```
+
+---
+
+## 📊 Model Evaluation
+
+Multiple machine learning classifiers can be compared to determine which model performs best for the sentiment classification task.
+
+Typical classification evaluation metrics include:
+
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+- Confusion Matrix
+
+This allows the performance of different approaches to be compared before selecting the final model.
+
+---
+
+## 🚀 Running the Project
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/hemu3553/Movie-Recommendation-System.git
+git clone https://github.com/hemu3553/Twitter-analysis-Python-ML.git
 ```
 
-Move into the project directory.
+Move into the project:
 
 ```bash
-cd Movie-Recommendation-System
-```
-
-Then enter the Django application directory if required:
-
-```bash
-cd "Movie Recommendation-System"
+cd Twitter-analysis-Python-ML
 ```
 
 ---
@@ -214,150 +263,106 @@ venv\Scripts\activate
 
 ---
 
-### 3. Install Dependencies
+### 3. Install Required Libraries
+
+Install the Python libraries required by the notebook/script.
+
+For example:
 
 ```bash
-pip install -r requirements.txt
+pip install pandas numpy scikit-learn matplotlib jupyter
 ```
+
+Additional packages may be required depending on the notebook environment.
 
 ---
 
-### 4. Run the Django Application
+### 4. Run the Jupyter Notebook
 
 ```bash
-python manage.py runserver
+jupyter notebook
 ```
 
-The development server will normally start at:
+Then open:
 
 ```text
-http://127.0.0.1:8000
+Twitter sentiment analysis_live.ipynb
 ```
 
-Open that address in your browser.
+You can run the notebook cells sequentially to reproduce the analysis.
 
 ---
 
-## 🤖 Model Training
+## 📈 Use Cases
 
-The repository contains a Jupyter Notebook:
+Sentiment analysis can be applied to many real-world problems, including:
 
-```text
-Movie_Recommendation_System_Complete_Guide.ipynb
-```
-
-The notebook contains the workflow used for model training and inference.
-
-It can also be used to experiment with different recommendation datasets or models.
-
----
-
-## 🔄 Using a Different Recommendation Model
-
-The project is structured so that another compatible recommendation model can be integrated.
-
-The main recommendation logic is located in:
-
-```text
-recommender/views.py
-```
-
-The dataset/model files are loaded from the `static` directory.
-
-This allows the recommendation engine to be updated without rebuilding the complete Django application.
-
----
-
-## 🎯 Example
-
-```text
-Input:
-
-Movie → The Dark Knight
-
-        ↓
-
-Recommendation Engine
-
-        ↓
-
-Output:
-
-Similar / related movie recommendations
-```
-
-The recommendations are then displayed through the Django web interface.
-
----
-
-## 📊 Project Goal
-
-The goal of this project is to demonstrate an end-to-end recommendation system rather than only a machine learning notebook.
-
-It combines:
-
-```text
-Data
-   ↓
-Recommendation Logic
-   ↓
-Model/Data Storage
-   ↓
-Django Backend
-   ↓
-Web Interface
-   ↓
-User Recommendations
-```
-
-This demonstrates how a recommendation model can be integrated into a usable web application.
+- Brand monitoring
+- Customer feedback analysis
+- Product reviews
+- Public opinion analysis
+- Marketing analytics
+- Social media monitoring
+- Customer experience analysis
+- Trend analysis
 
 ---
 
 ## 🔮 Future Improvements
 
-Possible improvements include:
+Possible improvements to this project include:
 
-- Larger and more recent movie datasets
-- Personalized recommendations based on user history
-- User authentication
-- Movie ratings
-- Collaborative filtering
-- Hybrid recommendation models
-- Movie poster and metadata API integration
-- Recommendation feedback
+- Real-time social media data ingestion
+- Larger and more recent datasets
+- Advanced NLP preprocessing
+- TF-IDF optimization
+- Deep learning sentiment models
+- Transformer-based models such as BERT
+- Sentiment confidence scores
+- Interactive analytics dashboard
+- REST API for sentiment prediction
 - Docker containerization
-- REST API for recommendations
-- Cloud deployment
 - Model monitoring
+- Cloud deployment
 
 ---
 
-## ⚠️ Current Limitations
+## ⚠️ Limitations
 
-The current system uses a limited movie database containing approximately the top 2,500 IMDb movies.
+The sentiment results depend heavily on the quality and scope of the dataset.
 
-Recommendations are therefore limited to movies available in the application's dataset.
+Social media text can also contain:
+
+- Sarcasm
+- Slang
+- Misspellings
+- Emojis
+- Mixed sentiment
+- Context-dependent language
+
+These factors can make automated sentiment classification challenging.
 
 ---
 
 ## 👨‍💻 Author
 
-**Hemanth Reddy**
+**Hemanth More**
 
 GitHub: `hemu3553`
 
 ---
 
-## ⭐ About This Project
+## ⭐ Project Summary
 
 This project demonstrates practical experience with:
 
 - Python
 - Machine Learning
-- Recommendation Systems
-- Django
-- Data Processing
-- Model Integration
-- Web Application Development
-- End-to-End ML Application Design
+- Natural Language Processing
+- Sentiment Analysis
+- Data Cleaning
+- Text Processing
+- Classification
+- Model Evaluation
+- Exploratory Data Analysis
+- Jupyter Notebook
